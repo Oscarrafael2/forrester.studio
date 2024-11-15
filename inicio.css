@@ -1,0 +1,92 @@
+
+
+/* Estilos para la sección Hero */
+.hero {
+    background-color: #333;
+    color: #fff;
+    padding: 3em 1em;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.btn-hero {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-hero:hover {
+    background-color: #218838;
+}
+
+/* Estilos para la sección de Destacados */
+#destacados {
+    background-color: #f9f9f9;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+#destacados h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#destacados p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 1em auto;
+    line-height: 1.6;
+}
+
+.destacados-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.destacado-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1.5em;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.destacado-item h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.destacado-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Media Queries para dispositivos más grandes */
+@media (min-width: 768px) {
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .destacado-item {
+        max-width: 250px;
+    }
+}

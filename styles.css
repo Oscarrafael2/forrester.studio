@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-cliente {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    background-image: url('camiones.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 4em 1em;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.btn-hero {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+#servicios {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+#servicios h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.servicio {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.servicio img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Media Queries para diferentes dispositivos */
+@media (min-width: 768px) {
+    .servicios-container {
+        gap: 2em;
+    }
+    
+    .servicio {
+        width: 45%;
+    }
+
+    .hero h2 {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 1em 2em;
+    }
+
+    .hero {
+        padding: 6em 2em;
+    }
+
+    .hero h2 {
+        font-size: 4em;
+    }
+
+    .servicio {
+        width: 30%;
+    }
+}
