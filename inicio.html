@@ -3,60 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forrester Studio - Inicio</title>
-    <link rel="stylesheet" href="inicio.css">
-  <link rel="stylesheet" href="styles.css"
+    <title>Forrester Studio - Apps</title>
+    <style>
+        /* Estilo básico y juvenil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4158D0, #C850C0, #FFCC70);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header simple */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .btn-descargar {
+            background: #FFE53B;
+            color: #333;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-descargar:hover {
+            transform: scale(1.05);
+            background: #FFD700;
+        }
+
+        /* Hero - presentación simple */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .fundador {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Sección de Apps (las dos principales) */
+        .apps-destacadas {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .apps-destacadas h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .apps-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #FFE53B;
+        }
+
+        .app-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-card h4 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .app-badge {
+            background: #FFE53B;
+            color: #333;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-app {
+            background: #FFE53B;
+            color: #333;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-app:hover {
+            background: #FFD700;
+            transform: scale(0.98);
+        }
+
+        /* Sección "Por qué nuestras apps" */
+        .caracteristicas {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .caracteristicas h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .caracteristicas-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .caracteristica {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            width: 250px;
+        }
+
+        .caracteristica span {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer simple */
+        footer {
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .apps-destacadas {
+                margin: 1rem;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header simple -->
     <header>
         <div class="logo">
             <h1>Forrester Studio</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="historia.html">Historia</a></li>
-                <li><a href="index.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Apps</a></li>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
-        <button class="btn-cliente" onclick="window.open('https://wa.me/529997495457?text=Hola%20Forrester%20Studio,%20quiero%20saber%20más%20sobre%20tus%20servicios', '_blank')">Hazte Cliente</button>
-        
+        <button class="btn-descargar" onclick="window.open('https://wa.me/529997495457', '_blank')">📲 Descargar Apps</button>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero con mención al fundador -->
     <section class="hero">
-        <h2>Bienvenido a Forrester Studio</h2>
-        <p>Soluciones tecnológicas adaptadas a tus necesidades en un mundo digital. Descubre nuestros servicios de desarrollo de aplicaciones, páginas web, recuperación de cuentas y más.</p>
-        <button class="btn-hero">Saber Más</button>
+        <h2>Forrester Studio</h2>
+        <p>Apps creadas para ti, con toda la onda</p>
+        <div class="fundador">
+            👨‍💻 Fundado por <strong>Oscar Rafael</strong>
+        </div>
     </section>
 
-    <!-- Sección de Destacados -->
-    <section id="destacados">
-        <h2>Nuestros Destacados</h2>
-        <p>Forrester Studio se especializa en ofrecer servicios de alta calidad en desarrollo de software y seguridad digital.</p>
-        <div class="destacados-container">
-            <div class="destacado-item">
-                <h3>Desarrollo de Aplicaciones</h3>
-                <p>Creamos aplicaciones móviles y de escritorio adaptadas a tus necesidades específicas.</p>
+    <!-- Sección principal: DOS APPS DESTACADAS -->
+    <section class="apps-destacadas">
+        <h3>🔥 Nuestras Apps Principales</h3>
+        <div class="apps-container">
+            <!-- App 1: StarIA -->
+            <div class="app-card">
+                <div class="app-icon">✨</div>
+                <span class="app-badge">NUEVO</span>
+                <h4>StarIA</h4>
+                <p>Tu asistente con inteligencia artificial. Responde preguntas, organiza tu día y te ayuda con tus tareas.</p>
+                <button class="btn-app" onclick="alert('✨ StarIA - Próximamente en tiendas')">Más info</button>
             </div>
-            <div class="destacado-item">
-                <h3>Desarrollo Web</h3>
-                <p>Páginas web modernas, responsivas y con diseños únicos para destacar en línea.</p>
+
+            <!-- App 2: Forrester Studio (App de Pelis) -->
+            <div class="app-card">
+                <div class="app-icon">🎬</div>
+                <span class="app-badge">🔥 POPULAR</span>
+                <h4>Forrester Studio</h4>
+                <p>La mejor app de películas y series. Todo el entretenimiento en un solo lugar, gratis y sin complicaciones.</p>
+                <button class="btn-app" onclick="alert('🎬 App de Pelis - Descárgala ya')">Ver catálogo</button>
             </div>
-            <div class="destacado-item">
-                <h3>Seguridad Digital</h3>
-                <p>Recuperación de cuentas y protección contra hackeos para asegurar tu presencia en internet.</p>
+        </div>
+    </section>
+
+    <!-- Pequeña sección de características (opcional) -->
+    <section class="caracteristicas">
+        <h3>¿Por qué elegir nuestras apps?</h3>
+        <div class="caracteristicas-grid">
+            <div class="caracteristica">
+                <span>⚡</span>
+                <h4>Rápidas</h4>
+                <p>Optimizadas para funcionar en cualquier dispositivo</p>
             </div>
+            <div class="caracteristica">
+                <span>🔒</span>
+                <h4>Seguras</h4>
+                <p>Tus datos protegidos siempre</p>
+            </div>
+            <div class="caracteristica">
+                <span>🎨</span>
+                <h4>Bonitas</h4>
+                <p>Diseño moderno y fácil de usar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Más información sobre el fundador -->
+    <section style="text-align: center; padding: 2rem;">
+        <div style="background: rgba(255,255,255,0.1); max-width: 600px; margin: 0 auto; padding: 2rem; border-radius: 20px;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">👋 Oscar Rafael</h3>
+            <p style="font-size: 1.2rem;">Fundador de Forrester Studio, un creador apasionado por la tecnología. Desde los 16 años desarrollando apps que la gente ama usar.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Forrester Studio - Todos los derechos reservados.</p>
+        <h3 style="margin-bottom: 1rem;">Forrester Studio</h3>
+        <div class="footer-links">
+            <a href="#">Inicio</a>
+            <a href="#">StarIA</a>
+            <a href="#">App de Pelis</a>
+            <a href="#">Contacto</a>
+        </div>
+        <p>&copy; 2025 Forrester Studio - Creado por Oscar Rafael</p>
+        <p style="opacity: 0.7; margin-top: 0.5rem;">Haciendo apps con ❤️</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Función simple para el scroll del header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0, 0, 0, 0.6)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.3)';
+            }
+        });
+
+        // Smooth scroll para links internos (si los agregas después)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
