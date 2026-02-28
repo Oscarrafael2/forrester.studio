@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forrester Studio - Desarrollo & Ciberseguridad</title>
+    <title>Forrester Studio - Apps</title>
     <style>
+        /* Estilo básico y juvenil */
         * {
             margin: 0;
             padding: 0;
@@ -12,588 +13,379 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4158D0, #C850C0, #FFCC70);
+            color: #fff;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
+        /* Header simple */
         header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
         }
 
-        .logo {
+        .logo h1 {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
-        .nav-links a {
+        nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
         }
 
-        /* Hero Section */
+        .btn-descargar {
+            background: #FFE53B;
+            color: #333;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-descargar:hover {
+            transform: scale(1.05);
+            background: #FFD700;
+        }
+
+        /* Hero - presentación simple */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
+        .hero h2 {
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            animation: fadeInUp 1s ease 0.3s both;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        .section-bg {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .section-content {
-            padding: 3rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Historia Section */
-        .historia-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .historia-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .historia-image {
-            text-align: center;
-        }
-
-        .profile-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 2rem;
-            border-radius: 20px;
-            color: #fff;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .profile-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+        .fundador {
             background: rgba(255,255,255,0.2);
-            margin: 0 auto 1rem;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Sección de Apps (las dos principales) */
+        .apps-destacadas {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .apps-destacadas h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .apps-container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 3rem;
-        }
-
-        /* Galería */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            height: 250px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .gallery-item:nth-child(2) {
-            background: linear-gradient(45deg, #4facfe, #00f2fe);
-        }
-
-        .gallery-item:nth-child(3) {
-            background: linear-gradient(45deg, #43e97b, #38f9d7);
-        }
-
-        .gallery-item:nth-child(4) {
-            background: linear-gradient(45deg, #fa709a, #fee140);
-        }
-
-        /* Store Section */
-        .store-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .app-card {
-            background: #fff;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
             padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
         }
 
         .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border-color: #667eea;
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #FFE53B;
         }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            font-size: 5rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 2rem;
-            font-weight: bold;
         }
 
-        .app-card h3 {
-            font-size: 1.5rem;
+        .app-card h4 {
+            font-size: 2rem;
             margin-bottom: 1rem;
-            color: #333;
         }
 
         .app-card p {
-            color: #666;
             margin-bottom: 1.5rem;
+            font-size: 1rem;
         }
 
-        .app-button {
+        .app-badge {
+            background: #FFE53B;
+            color: #333;
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: #fff;
-            text-decoration: none;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-app {
+            background: #FFE53B;
+            color: #333;
+            border: none;
+            padding: 0.8rem 2rem;
             border-radius: 25px;
             font-weight: bold;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
 
-        .app-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        .btn-app:hover {
+            background: #FFD700;
+            transform: scale(0.98);
         }
 
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
+        /* Sección "Por qué nuestras apps" */
+        .caracteristicas {
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 2rem 0;
-            backdrop-filter: blur(10px);
         }
 
-        /* Mobile Responsive */
+        .caracteristicas h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .caracteristicas-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .caracteristica {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            width: 250px;
+        }
+
+        .caracteristica span {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer simple */
+        footer {
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .historia-content {
-                grid-template-columns: 1fr;
+            header {
+                flex-direction: column;
+                gap: 1rem;
                 text-align: center;
             }
 
-            .section-content {
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .apps-destacadas {
+                margin: 1rem;
                 padding: 2rem 1rem;
             }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
+    <!-- Header simple -->
     <header>
-        <nav class="container">
-            <div class="logo">Forrester Studio</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#store">Store</a></li>
+        <div class="logo">
+            <h1>Forrester Studio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Apps</a></li>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
+        <button class="btn-descargar" onclick="window.open('https://wa.me/529997495457', '_blank')">📲 Descargar Apps</button>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Forrester Studio</h1>
-            <p>Desarrollo de Apps, Páginas Web y Ciberseguridad</p>
-            <a href="#historia" class="cta-button">Conoce Nuestra Historia</a>
+    <!-- Hero con mención al fundador -->
+    <section class="hero">
+        <h2>Forrester Studio</h2>
+        <p>Apps creadas para ti, con toda la onda</p>
+        <div class="fundador">
+            👨‍💻 Fundado por <strong>Oscar Rafael</strong>
         </div>
     </section>
 
-    <section id="historia">
-        <div class="container">
-            <div class="section-bg fade-in">
-                <div class="section-content">
-                    <h2>Nuestra Historia</h2>
-                    <div class="historia-content">
-                        <div class="historia-text">
-                            <h3>El Comienzo de una Visión</h3>
-                            <p>Forrester Studio nació de la pasión y determinación de un joven visionario. Fundado por Oscar Rafael, un talentoso adolescente de 16 años, nuestro estudio representa la nueva generación de desarrolladores que están revolucionando el mundo tecnológico.</p>
-                            
-                            <p>Con una mente brillante y una visión clara del futuro digital, Oscar comenzó este proyecto con el objetivo de crear soluciones innovadoras en desarrollo de aplicaciones, páginas web y ciberseguridad. A pesar de su corta edad, ha demostrado que la juventud y la creatividad pueden lograr grandes cosas.</p>
-                            
-                            <p>En Forrester Studio, combinamos la energía juvenil con la experiencia técnica para ofrecer servicios de calidad que satisfacen las necesidades del mercado actual.</p>
-                        </div>
-                        <div class="historia-image">
-                            <div class="profile-card">
-                                <div class="profile-avatar">OR</div>
-                                <h3>Oscar Rafael</h3>
-                                <p>Fundador & CEO</p>
-                                <p>16 años</p>
-                                <p>"Innovando el futuro, un código a la vez"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Sección principal: DOS APPS DESTACADAS -->
+    <section class="apps-destacadas">
+        <h3>🔥 Nuestras Apps Principales</h3>
+        <div class="apps-container">
+            <!-- App 1: StarIA -->
+            <div class="app-card">
+                <div class="app-icon">✨</div>
+                <span class="app-badge">NUEVO</span>
+                <h4>StarIA</h4>
+                <p>Tu asistente con inteligencia artificial. Responde preguntas, organiza tu día y te ayuda con tus tareas.</p>
+                <button class="btn-app" onclick="alert('✨ StarIA - Próximamente en tiendas')">Más info</button>
+            </div>
+
+            <!-- App 2: Forrester Studio (App de Pelis) -->
+            <div class="app-card">
+                <div class="app-icon">🎬</div>
+                <span class="app-badge">🔥 POPULAR</span>
+                <h4>Forrester Studio</h4>
+                <p>La mejor app de películas y series. Todo el entretenimiento en un solo lugar, gratis y sin complicaciones.</p>
+                <button class="btn-app" onclick="alert('🎬 App de Pelis - Descárgala ya')">Ver catálogo</button>
             </div>
         </div>
     </section>
 
-    <section id="galeria">
-        <div class="container">
-            <div class="section-bg fade-in">
-                <div class="section-content">
-                    <h2>Nuestro Espacio de Desarrollo</h2>
-                    <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #666;">
-                        Donde la magia del código cobra vida
-                    </p>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <div>💻 Estación de Desarrollo Principal</div>
-                        </div>
-                        <div class="gallery-item">
-                            <div>🖥️ Setup de Testing y Debugging</div>
-                        </div>
-                        <div class="gallery-item">
-                            <div>📱 Área de Desarrollo Mobile</div>
-                        </div>
-                        <div class="gallery-item">
-                            <div>🔒 Centro de Ciberseguridad</div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Pequeña sección de características (opcional) -->
+    <section class="caracteristicas">
+        <h3>¿Por qué elegir nuestras apps?</h3>
+        <div class="caracteristicas-grid">
+            <div class="caracteristica">
+                <span>⚡</span>
+                <h4>Rápidas</h4>
+                <p>Optimizadas para funcionar en cualquier dispositivo</p>
+            </div>
+            <div class="caracteristica">
+                <span>🔒</span>
+                <h4>Seguras</h4>
+                <p>Tus datos protegidos siempre</p>
+            </div>
+            <div class="caracteristica">
+                <span>🎨</span>
+                <h4>Bonitas</h4>
+                <p>Diseño moderno y fácil de usar</p>
             </div>
         </div>
     </section>
 
-    <section id="store">
-        <div class="container">
-            <div class="section-bg fade-in">
-                <div class="section-content">
-                    <h2>Forrester Store</h2>
-                    <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #666;">
-                        Descarga nuestras aplicaciones y explora nuestros proyectos
-                    </p>
-                    <div class="store-grid">
-                        <div class="app-card">
-                            <div class="app-icon">⭐</div>
-                            <h3>StarIA</h3>
-                            <p>Nuestra aplicación estrella de inteligencia artificial que revoluciona la forma de interactuar con la tecnología. Experimenta el futuro de la IA.</p>
-                            <a href="#" class="app-button" onclick="visitApp('StarIA')">Visitar Página</a>
-                        </div>
-                        
-                        <div class="app-card">
-                            <div class="app-icon">📱</div>
-                            <h3>Mobile Apps</h3>
-                            <p>Colección de aplicaciones móviles desarrolladas por Forrester Studio. Innovación y funcionalidad en la palma de tu mano.</p>
-                            <a href="#" class="app-button" onclick="downloadApp('mobile')">Descargar Apps</a>
-                        </div>
-                        
-                        <div class="app-card">
-                            <div class="app-icon">🌐</div>
-                            <h3>Web Projects</h3>
-                            <p>Explora nuestro portafolio de páginas web y aplicaciones web. Diseños modernos y funcionalidad de vanguardia.</p>
-                            <a href="#" class="app-button" onclick="visitProjects()">Ver Proyectos</a>
-                        </div>
-                        
-                        <div class="app-card">
-                            <div class="app-icon">🔐</div>
-                            <h3>Security Tools</h3>
-                            <p>Herramientas de ciberseguridad desarrolladas para proteger y analizar sistemas. Mantén tus datos seguros con nosotros.</p>
-                            <a href="#" class="app-button" onclick="downloadApp('security')">Descargar Tools</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Más información sobre el fundador -->
+    <section style="text-align: center; padding: 2rem;">
+        <div style="background: rgba(255,255,255,0.1); max-width: 600px; margin: 0 auto; padding: 2rem; border-radius: 20px;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">👋 Oscar Rafael</h3>
+            <p style="font-size: 1.2rem;">Fundador de Forrester Studio, un creador apasionado por la tecnología. Desde los 16 años desarrollando apps que la gente ama usar.</p>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Forrester Studio. Desarrollado con ❤️ por Oscar Rafael</p>
-            <p>Innovando el futuro digital, un proyecto a la vez</p>
+        <h3 style="margin-bottom: 1rem;">Forrester Studio</h3>
+        <div class="footer-links">
+            <a href="#">Inicio</a>
+            <a href="#">StarIA</a>
+            <a href="#">App de Pelis</a>
+            <a href="#">Contacto</a>
         </div>
+        <p>&copy; 2025 Forrester Studio - Creado por Oscar Rafael</p>
+        <p style="opacity: 0.7; margin-top: 0.5rem;">Haciendo apps con ❤️</p>
     </footer>
 
     <script>
-        // Smooth scrolling
+        // Función simple para el scroll del header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0, 0, 0, 0.6)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.3)';
+            }
+        });
+
+        // Smooth scroll para links internos (si los agregas después)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(15px)';
-                header.querySelectorAll('.nav-links a, .logo').forEach(el => {
-                    el.style.color = '#333';
-                });
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-                header.style.backdropFilter = 'blur(10px)';
-                header.querySelectorAll('.nav-links a, .logo').forEach(el => {
-                    el.style.color = '#fff';
-                });
-            }
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
-
-        // Store functions
-        function visitApp(appName) {
-            if (appName === 'StarIA') {
-                alert('¡Redirigiendo a StarIA! Esta sería la URL de tu aplicación StarIA.');
-                // window.open('URL_DE_STARIA', '_blank');
-            }
-        }
-
-        function downloadApp(type) {
-            if (type === 'mobile') {
-                alert('¡Descargando aplicaciones móviles! Aquí se iniciaría la descarga de tus apps móviles.');
-            } else if (type === 'security') {
-                alert('¡Descargando herramientas de seguridad! Aquí se iniciaría la descarga de tus tools de ciberseguridad.');
-            }
-        }
-
-        function visitProjects() {
-            alert('¡Explorando proyectos web! Aquí se mostraría tu portafolio completo.');
-        }
-
-        // Add some interactive particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: fixed;
-                width: 4px;
-                height: 4px;
-                background: rgba(255,255,255,0.8);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 1;
-                animation: float-particle 3s linear forwards;
-            `;
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            
-            document.body.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 3000);
-        }
-
-        // Add particle animation CSS
-        const particleStyle = document.createElement('style');
-        particleStyle.textContent = `
-            @keyframes float-particle {
-                to {
-                    transform: translateY(-${window.innerHeight + 100}px) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(particleStyle);
-
-        // Create particles periodically
-        setInterval(createParticle, 2000);
     </script>
 </body>
 </html>
